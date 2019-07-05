@@ -3,6 +3,7 @@
 it is a comparitive study between two various face feature extraction method namely LBPH and LMDeP.
 
 #Dependencies
+CV2
 scikit Learn
 Pandas
 sklearn
