@@ -39,6 +39,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.imageinadex = 0
         self.previousTab = 0
 
+
         self.st_precision = 0
         self.st_recall = 0
         self.st_accuracy = 0
@@ -46,6 +47,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.st_maxdatasetvalue = 200
         self.st_featuretype = 1
         self.st_slidervalue = 70
+        self.an2_slidervalue = 70
 
         self.ui.tabWidget.setCurrentIndex(0)
 
@@ -86,9 +88,16 @@ class MainWindow(QtWidgets.QMainWindow):
         self.onlyInt = QtGui.QIntValidator()
         self.ui.st_slidervalue_lineEdit.setValidator(self.onlyInt)
 
-        #Analysis Page
+        # Analysis1 Page
         self.ui.an_process_lbph_bt.clicked.connect(self.an_process_lbph)
         self.ui.an_process_lmdep_bt.clicked.connect(self.an_process_lmdep)
+
+        # Analysis1 Page
+        self.ui.an2_process_bt.clicked.connect(self.an2_Process)
+        self.ui.an2_horizontalSlider.valueChanged.connect(self.an2_slidervaluechange)
+        self.ui.an2_slidervalue_lineEdit_2.editingFinished.connect(self.an2_sliderlineeditchange)
+        self.onlyInt = QtGui.QIntValidator()
+        self.ui.an2_slidervalue_lineEdit_2.setValidator(self.onlyInt)
 
     def st_sliderlineeditchange(self):
         i = int(self.ui.st_slidervalue_lineEdit.text())
@@ -102,14 +111,73 @@ class MainWindow(QtWidgets.QMainWindow):
             i = i+10
         self.ui.st_slidervalue_lineEdit.setText(str(i))
         self.ui.st_horizontalSlider.setValue(i)
-        self.i = i
+        self.st_slidervalue = i
+
+    def an2_sliderlineeditchange(self):
+        i = int(self.ui.an2_slidervalue_lineEdit_2.text())
+        self.ui.an2_horizontalSlider.setValue(i)
+        self.an2_slidervalue = i
+    def an2_slidervaluechange(self):
+        i = self.ui.an2_horizontalSlider.value()
+        j = i%10
+        i-=j
+        if j>5:
+            i = i+10
+        self.ui.an2_slidervalue_lineEdit_2.setText(str(i))
+        self.ui.an2_horizontalSlider.setValue(i)
+        self.an2_slidervalue = i
+
+    def an2_Process(self):
+        if self.ui.an2_radioButton_d1.isChecked():
+            data1 = pd.read_csv("LBPH Features/FaceFeaturesFace94LBPH.csv")
+            data2 = pd.read_csv("LMDEP Features/FaceFeaturesFace94LMDEP.csv")
+        elif self.ui.an2_radioButton_d2.isChecked():
+            data1 = pd.read_csv("LBPH Features/FaceFeaturesFace95LBPH.csv")
+            data2 = pd.read_csv("LMDEP Features/FaceFeaturesFace95LMDEP.csv")
+        elif self.ui.an2_radioButton_d3.isChecked():
+            data1 = pd.read_csv("LBPH Features/FaceFeaturesFace96LBPH.csv")
+            data2 = pd.read_csv("LMDEP Features/FaceFeaturesFace96LMDeP.csv")
+        elif self.ui.an2_radioButton_d4.isChecked():
+            data1 = pd.read_csv("LBPH Features/FaceFeaturesFEIFaceLBPH.csv")
+            data2 = pd.read_csv("LMDEP Features/FaceFeaturesFEIFaceLMDep.csv")
+
+        if self.ui.an2_radioButton_RF.isChecked():
+            print("RF")
+            cg = ComparisionGraph(data1,data2, self.an2_slidervalue,1)
+            print ("qwerty")
+            result = cg.DrawComparision()
+        elif self.ui.an2_radioButton_ED.isChecked():
+            print("ED")
+            cg = ComparisionGraph(data1,data2, self.an2_slidervalue,2)
+            print ("qwerty")
+            result = cg.DrawComparision()
+        elif self.ui.an2_radioButton_SVM.isChecked():
+            print("SVM")
+            cg = ComparisionGraph(data1,data2, self.an2_slidervalue,3)
+            print ("qwerty")
+            result = cg.DrawComparision()
+        elif self.ui.an2_radioButton_KNN.isChecked():
+            print("KNN+")
+            cg = ComparisionGraph(data1,data2, self.an2_slidervalue,4)
+            print ("qwerty")
+            result = cg.DrawComparision()
+
+        frame = cv2.cvtColor(result, cv2.COLOR_BGR2RGB)
+        height, width, channel = frame.shape
+        step = channel * width
+        qImg = QImage(frame.data, width, height, step, QImage.Format_RGB888)
+        # show frame in img_label
+        self.ui.an2_image_Label_1.setPixmap(QPixmap.fromImage(qImg))
+        self.ui.an2_image_Label_1.setAlignment(QtCore.Qt.AlignCenter)
+
 
     def an_process_lbph(self):
         nds1 = pd.read_csv("LBPH Features/FaceFeaturesFace94LBPH.csv")
         nds2 = pd.read_csv("LBPH Features/FaceFeaturesFace95LBPH.csv")
         nds3 = pd.read_csv("LBPH Features/FaceFeaturesFace96LBPH.csv")
         nds4 = pd.read_csv("LBPH Features/FaceFeaturesFEIFaceLBPH.csv")
-        dataanalysis = DataAnalysis(nds1,nds2,nds3,nds4)
+        print('a')
+        dataanalysis = DataAnalysis(nds1, nds2, nds3, nds4)
         result = dataanalysis.drawGraph()
         frame = cv2.cvtColor(result, cv2.COLOR_BGR2RGB)
         height, width, channel = frame.shape

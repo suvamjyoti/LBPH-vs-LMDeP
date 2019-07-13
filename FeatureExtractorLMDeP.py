@@ -48,6 +48,7 @@ class LMDeP():
         w, h = img.shape[:2]
 
         res = np.zeros((w, h), np.uint32)
+        res2 = np.zeros((w, h), np.uint32)
 
         for i in range(1, w-1):
             for j in range(1, h-1):
@@ -119,9 +120,9 @@ class LMDeP():
                     k = 2**m
                     Sum1 += arr[m]*k
 
-                img[i, j] = Sum1
+                res2[i, j] = Sum1
 
-        (hist, _) = np.histogram(img.ravel(), bins=10)
+        (hist, _) = np.histogram(res2.ravel(), bins=10)
 
         # normalize the histogram
         hist = hist.astype("float")
@@ -139,6 +140,7 @@ class LMDeP():
         w, h = img.shape[:2]
 
         res = np.zeros((w, h), np.uint32)
+        res2 = np.zeros((w, h), np.uint32)
 
         for i in range(3, w-3):
             for j in range(3, h-3):
@@ -210,9 +212,9 @@ class LMDeP():
                     k = 2**m
                     Sum1 += arr[m]*k
 
-                img[i, j] = Sum1
+                res2[i, j] = Sum1
 
-        (hist, _) = np.histogram(img.ravel(), bins=10)
+        (hist, _) = np.histogram(res2.ravel(), bins=10)
 
         # normalize the histogram
         hist = hist.astype("float")

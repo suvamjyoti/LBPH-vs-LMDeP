@@ -2,7 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6780ffff-6bb5-4bf3-86b5-4b4ad3ff54aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnalysisGraph.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClassifierClass.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FeatureExtractorLBPH.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FeatureExtractorLMDeP.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PickleGenerator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Prediction.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset_creator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pyqt5_face_detection.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pyqt5_face_detection.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add_Page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FaceFeatureExtractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/FaceFeatureExtractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognise_Page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/faceFeature.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haarcascade/haarcascade_eye.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haarcascade/haarcascade_eye_tree_eyeglasses.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haarcascade/haarcascade_frontalface_alt.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haarcascade/haarcascade_frontalface_alt2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haarcascade/haarcascade_frontalface_alt_tree.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haarcascade/haarcascade_frontalface_default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haarcascade/haarcascade_fullbody.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haarcascade/haarcascade_lefteye_2splits.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haarcascade/haarcascade_lowerbody.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haarcascade/haarcascade_mcs_eyepair_big.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haarcascade/haarcascade_mcs_eyepair_small.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haarcascade/haarcascade_mcs_leftear.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haarcascade/haarcascade_mcs_lefteye.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haarcascade/haarcascade_mcs_mouth.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haarcascade/haarcascade_mcs_nose.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haarcascade/haarcascade_mcs_rightear.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haarcascade/haarcascade_mcs_righteye.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haarcascade/haarcascade_mcs_upperbody.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haarcascade/haarcascade_profileface.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haarcascade/haarcascade_righteye_2splits.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/haarcascade/haarcascade_upperbody.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_window.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui_main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui_main.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui_main2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui_main_win.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui_main_window.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui_main_window.ui" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,11 +56,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-338">
-              <caret line="52" column="51" selection-start-line="52" selection-start-column="51" selection-end-line="52" selection-end-column="51" />
+            <state relative-caret-position="2720">
+              <caret line="180" column="30" selection-start-line="180" selection-start-column="30" selection-end-line="180" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -24,20 +68,30 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AnalysisGraph.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5423">
-              <caret line="319" column="46" selection-start-line="319" selection-start-column="46" selection-end-line="319" selection-end-column="46" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="782">
+              <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FeatureExtractorLMDeP.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3383">
+              <caret line="229" selection-start-line="229" selection-end-line="229" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#304#1575#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ClassifierClass.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="112" column="27" selection-start-line="112" selection-start-column="27" selection-end-line="112" selection-end-column="27" />
+            <state relative-caret-position="187">
+              <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
                 <element signature="e#1951#3108#0" />
@@ -88,14 +142,14 @@
         <option value="$PROJECT_DIR$/FeatureExtractor.py" />
         <option value="$PROJECT_DIR$/FaceFeatures.csv" />
         <option value="$PROJECT_DIR$/FeatureExtractorLBPH.py" />
-        <option value="$PROJECT_DIR$/FeatureExtractorLMDeP.py" />
         <option value="$PROJECT_DIR$/dataset_creator.py" />
         <option value="$PROJECT_DIR$/PickleGenerator.py" />
         <option value="$PROJECT_DIR$/faceFeature.csv" />
         <option value="$PROJECT_DIR$/Prediction.py" />
         <option value="$PROJECT_DIR$/ClassifierClass.py" />
-        <option value="$PROJECT_DIR$/AnalysisGraph.py" />
+        <option value="$PROJECT_DIR$/FeatureExtractorLMDeP.py" />
         <option value="$PROJECT_DIR$/main2.py" />
+        <option value="$PROJECT_DIR$/AnalysisGraph.py" />
       </list>
     </option>
   </component>
@@ -110,12 +164,22 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Multimodel_Biometrics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Multimodel_Biometrics" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="E:/PracTice" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -251,8 +315,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main2" />
-        <item itemvalue="Python.Prediction" />
         <item itemvalue="Python.AnalysisGraph" />
+        <item itemvalue="Python.Prediction" />
         <item itemvalue="Python.ClassifierClass" />
         <item itemvalue="Python.dataset_creator" />
       </list>
@@ -272,10 +336,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19122024" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.19122024" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -348,16 +411,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FeatureExtractorLMDeP.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2333">
-          <caret line="19" column="39" lean-forward="true" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Finger_test1.py" />
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -377,13 +430,31 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/qwerty.py" />
+    <entry file="file://$PROJECT_DIR$/ui_main2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#314#38688#0" />
+            <element signature="e#38739#42149#0" />
+            <element signature="e#42185#42379#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Database4/1/1-01.jpg" />
     <entry file="file://$PROJECT_DIR$/Database4/1/1-04.jpg" />
     <entry file="file://$PROJECT_DIR$/Database4/1/1-08.jpg" />
     <entry file="file://$PROJECT_DIR$/Database4/1/1-06.jpg" />
     <entry file="file://$PROJECT_DIR$/Database4/1/1-05.jpg" />
     <entry file="file://$PROJECT_DIR$/LBPH Features/FaceFeaturesFace96LBPH.csv" />
-    <entry file="file://$PROJECT_DIR$/ui_main.py" />
+    <entry file="file://$PROJECT_DIR$/ui_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sdfb.jpg" />
     <entry file="file://$PROJECT_DIR$/a.png" />
     <entry file="file://$PROJECT_DIR$/PickleGenerator.py">
@@ -425,39 +496,44 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/9336923.4.jpg" />
+    <entry file="file://$PROJECT_DIR$/faceFeature.csv___jb_old___">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2720">
+          <caret line="180" column="30" selection-start-line="180" selection-start-column="30" selection-end-line="180" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FeatureExtractorLMDeP.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3383">
+          <caret line="229" selection-start-line="229" selection-end-line="229" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#304#1575#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/AnalysisGraph.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5423">
-          <caret line="319" column="46" selection-start-line="319" selection-start-column="46" selection-end-line="319" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="782">
+          <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ClassifierClass.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="112" column="27" selection-start-line="112" selection-start-column="27" selection-end-line="112" selection-end-column="27" />
+        <state relative-caret-position="187">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
+            <element signature="e#847#5259#0" />
             <element signature="e#1951#3108#0" />
             <element signature="e#3155#4153#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui_main2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13904">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-338">
-          <caret line="52" column="51" selection-start-line="52" selection-start-column="51" selection-end-line="52" selection-end-column="51" />
         </state>
       </provider>
     </entry>

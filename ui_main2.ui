@@ -2069,7 +2069,7 @@
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>-493</y>
+             <y>0</y>
              <width>883</width>
              <height>1011</height>
             </rect>
@@ -2172,38 +2172,6 @@
                  </property>
                  <property name="text">
                   <string>Face96</string>
-                 </property>
-                </widget>
-                <widget class="QSpinBox" name="an2_maxdata_spinbox">
-                 <property name="geometry">
-                  <rect>
-                   <x>140</x>
-                   <y>120</y>
-                   <width>71</width>
-                   <height>22</height>
-                  </rect>
-                 </property>
-                 <property name="minimum">
-                  <number>100</number>
-                 </property>
-                 <property name="maximum">
-                  <number>10000</number>
-                 </property>
-                 <property name="value">
-                  <number>200</number>
-                 </property>
-                </widget>
-                <widget class="QLabel" name="an2_maxdata_label">
-                 <property name="geometry">
-                  <rect>
-                   <x>40</x>
-                   <y>120</y>
-                   <width>101</width>
-                   <height>21</height>
-                  </rect>
-                 </property>
-                 <property name="text">
-                  <string>Max Data</string>
                  </property>
                 </widget>
                </widget>
@@ -2377,7 +2345,7 @@
               </property>
               <property name="maximumSize">
                <size>
-                <width>16777215</width>
+                <width>900</width>
                 <height>400</height>
                </size>
               </property>

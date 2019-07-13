@@ -21,32 +21,31 @@ class DataAnalysis:
         self.iitd = iitd
 
     def drawGraph(self):
-
         x = ['Face94', 'Face95', 'Face97', 'IITD']
         y1 = []
         y2 = []
         y3 = []
         y4 = []
 
-        y1[0] = self.euclidianDistance(self.face94)
-        y1[1] = self.euclidianDistance(self.face95)
-        y1[2] = self.euclidianDistance(self.face97)
-        y1[3] = self.euclidianDistance(self.iitd)
+        y1.append(self.euclidianDistance(self.face94))
+        y1.append(self.euclidianDistance(self.face95))
+        y1.append(self.euclidianDistance(self.face97))
+        y1.append(self.euclidianDistance(self.iitd))
 
-        y2[0] = self.supportVectormachine(self.face94)
-        y2[1] = self.supportVectormachine(self.face95)
-        y2[2] = self.supportVectormachine(self.face97)
-        y2[3] = self.supportVectormachine(self.iitd)
+        y2.append(self.supportVectormachine(self.face94))
+        y2.append(self.supportVectormachine(self.face95))
+        y2.append(self.supportVectormachine(self.face97))
+        y2.append(self.supportVectormachine(self.iitd))
 
-        y3[0] = self.kNearestNeighbour(self.face94)
-        y3[1] = self.kNearestNeighbour(self.face95)
-        y3[2] = self.kNearestNeighbour(self.face97)
-        y3[3] = self.kNearestNeighbour(self.iitd)
+        y3.append(self.kNearestNeighbour(self.face94))
+        y3.append(self.kNearestNeighbour(self.face95))
+        y3.append(self.kNearestNeighbour(self.face97))
+        y3.append(self.kNearestNeighbour(self.iitd))
 
-        y4[0] = self.randomForest(self.face94)
-        y4[1] = self.randomForest(self.face95)
-        y4[2] = self.randomForest(self.face97)
-        y4[3] = self.randomForest(self.iitd)
+        y4.append(self.randomForest(self.face94))
+        y4.append(self.randomForest(self.face95))
+        y4.append(self.randomForest(self.face97))
+        y4.append(self.randomForest(self.iitd))
 
         plt.plot(x, y1, 'r', label='EucDist')
         plt.plot(x, y2, 'g', label='SVM')
@@ -57,13 +56,13 @@ class DataAnalysis:
         plt.xlabel('FACE_DATASET')
         plt.title('LBPH')
         plt.savefig('a.png')
+        plt.close()
         img = cv2.imread('a.png')
 
         return img
 
     def euclidianDistance(self, data):
         train, test = train_test_split(data, test_size=0.3)
-
         # program starts
         test_y = []
         y_pred = []
@@ -83,10 +82,12 @@ class DataAnalysis:
                 y_pred.append(res)
                 res2 = test.iloc[i, -1]
                 test_y.append(res2)
+
         result = precision_recall_fscore_support(test_y, y_pred, average='macro')
         return result[2]
 
     def kNearestNeighbour(self, data):
+        print('e')
 
         train, test = train_test_split(data, test_size=0.3)
 
@@ -107,6 +108,7 @@ class DataAnalysis:
         return result[2]
 
     def supportVectormachine(self, data):
+        print('f')
 
         train, test = train_test_split(data, test_size=0.3)
 
@@ -117,11 +119,15 @@ class DataAnalysis:
 
         model = svm.SVC(kernel='linear', gamma='scale')
         model.fit(train_X, train_y)
+
         y_pred = model.predict(test_X)
-        result = precision_recall_fscore_support(test_y, y_pred, average='macro')
-        return result[2]
+        #result = precision_recall_fscore_support(test_y, y_pred, average='macro')
+        accu = metrics.accuracy_score(test_y, y_pred)
+        print(accu)
+        return accu
 
     def randomForest(self, data):
+        print('g')
 
         train, test = train_test_split(data, test_size=0.3)
 
@@ -144,58 +150,39 @@ class ComparisionGraph:
         self.data2 = data2
         self.size = size
         self.classifier = classifier
-
+        print('su')
 
     def DrawComparision(self):
 
         if self.classifier == 1:
-            start = time.process_time()
-            a1 = self.randomForest(self.data1, 1)
-            e1 = time.process_time() - start
-            a1.append(e1)
-            a2 = self.randomForest(self.data2, 2)
-            e2 = time.process_time() - e1
-            a2.append(e2)
+            a1, a2, a3 = self.randomForest(self.data1, 1)
+            b1, b2, b3 = self.randomForest(self.data2, 2)
+            plt.title('Random Forest')
 
         elif self.classifier == 2:
-            start = time.process_time()
-            a1 = self.euclidianDistance(self.data1)
-            e1 = time.process_time() - start
-            a1.append(e1)
-            a2 = self.euclidianDistance(self.data2)
-            e2 = time.process_time() - e1
-            a2.append(e2)
-
+            a1, a2, a3 = self.euclidianDistance(self.data1)
+            b1, b2, b3 = self.euclidianDistance(self.data2)
+            plt.title('Euclidian Distance')
 
         elif self.classifier == 3:
-            start = time.process_time()
-            a1 = self.supportVectormachine(self.data1, 1)
-            e1 = time.process_time() - start
-            a1.append(e1)
-            a2 = self.supportVectormachine(self.data2, 2)
-            e2 = time.process_time() - e1
-            a2.append(e2)
+            a1, a2, a3 = self.supportVectormachine(self.data1, 1)
+            b1, b2, b3 = self.supportVectormachine(self.data2, 2)
+            plt.title('Suport Vector Machine')
 
         else:
-            start = time.process_time()
-            a1 = self.kNearestNeighbour(self.data1, 1)
-            e1 = time.process_time() - start
-            a1.append(e1)
-            a2 = self.kNearestNeighbour(self.data2, 2)
-            e2 = time.process_time() - e1
-            a2.append(e2)
-
+            a1, a2, a3 = self.kNearestNeighbour(self.data1, 1)
+            b1, b2, b3 = self.kNearestNeighbour(self.data2, 2)
+            plt.title('K Nearest Neighbour')
         # data to plot
-        n_groups = 4
-        means_frank = a1
-        means_guido = a2
+        n_groups = 3
+        means_frank = (a1, a2, a3)
+        means_guido = (b1, b2, b3)
 
         # create plot
         fig, ax = plt.subplots()
         index = np.arange(n_groups)
         bar_width = 0.35
         opacity = 0.8
-
         rects1 = plt.bar(index, means_frank, bar_width,
                          alpha=opacity,
                          color='b',
@@ -206,16 +193,16 @@ class ComparisionGraph:
                          color='g',
                          label='LMDEP')
 
-        plt.xlabel('Person')
+        plt.xlabel('parameter')
         plt.ylabel('Scores')
-        plt.title('Scores by person')
-        plt.xticks(index + bar_width, ('precision', 'recall', 'accuracy', 'time'))
+        plt.xticks(index + bar_width, ('precision', 'recall', 'accuracy'))
         plt.legend()
         plt.tight_layout()
         plt.savefig('a.png')
         img = cv2.imread('a.png')
+        small = cv2.resize(img, (800, 400))
 
-        return img
+        return small
        
     def euclidianDistance(self, data):
         tsize = 1 - (self.size/100)
@@ -255,7 +242,7 @@ class ComparisionGraph:
         else:
             train_X = train[['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
                              '10', '11', '12', '13', '14', '15', '16', '17', '18', '19']]
-            test_X = train[['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+            test_X = test[['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
                             '10', '11', '12', '13', '14', '15', '16', '17', '18', '19']]
 
         train_y = train.name
@@ -284,7 +271,7 @@ class ComparisionGraph:
         else:
             train_X = train[['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
                              '10', '11', '12', '13', '14', '15', '16', '17', '18', '19']]
-            test_X = train[['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+            test_X = test[['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
                             '10', '11', '12', '13', '14', '15', '16', '17', '18', '19']]
 
         train_y = train.name
@@ -306,10 +293,12 @@ class ComparisionGraph:
             train_X = train[['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']]
             test_X = test[['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']]
         else:
+            print('rf4')
             train_X = train[['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
                              '10', '11', '12', '13', '14', '15', '16', '17', '18', '19']]
-            test_X = train[['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-                            '10', '11', '12', '13', '14', '15', '16', '17', '18', '19']]
+            print('rf5')
+            test_X = test[['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+                           '10', '11', '12', '13', '14', '15', '16', '17', '18', '19']]
 
         train_y = train.name
         test_y = test.name
@@ -318,6 +307,7 @@ class ComparisionGraph:
         y_pred = model.predict(test_X)
         result = precision_recall_fscore_support(test_y, y_pred, average='macro')
         accu = metrics.accuracy_score(test_y, y_pred)
+        print("result = " , result)
         return result[0], result[1], accu
 
 
