@@ -1,24 +1,24 @@
-#Title
-# LBPH-vs-LMDeP
+
+LBPH-vs-LMDeP
 it is a comparitive study between two face feature extraction method(LBPH and LMDeP) using various classifiers.
 
-#Dependencies
-CV2
-scikit Learn
-Pandas
-sklearn
-python 3.7
-pyQT5
-numpy
+Dependencies
+#CV2
+#scikit Learn
+#Pandas
+#sklearn
+#python 3.7
+#pyQT5
+#numpy
 
-#To Run
+To Run
 to start the program just run main2.py program.
 
-#! WARNING !under Progress
+! WARNING !under Progress
 * Currently the recogniser does not work well in dynamic environment,So i am working towards integrating a deep learning model.
 * LMDeP option in standard tab, Takes a lot of time to process 200 images,near about 25 minutes.As the LMDeP was applied from scratch thus it is not optimised,i am working towards the same
 
-# How to use
+How to use
 
 'ADD'
 Add tab wants the user to enter his/her face data for feature extraction,
